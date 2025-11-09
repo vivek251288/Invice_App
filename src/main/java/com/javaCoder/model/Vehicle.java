@@ -13,12 +13,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Vehicle {
-	
-	    @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
 
-	    private String make;
-	    private String model;
-	    private Double price;
-	}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	private String make;
+	private String model;
+	private Double price;
+	private Long dealerId;
+}
