@@ -1,4 +1,8 @@
 http://localhost:9199/api/invoice/generate?dealerId=1&vehicleId=101&customerName=John%20Doe
+http://localhost:9199/api/invoice/download?invoiceId=INV-1762686667771
+http://127.0.0.1:9199/api/invoice/findByInvoiceId?invoiceNumber=INV-1762686667771
+http://127.0.0.1:9199/api/invoice/findByInvoiceAndVehicleId?dealerId=1&vehicleId=101&invoiceNumber=INV-1762686667771
+
 
 INSERT INTO dealer (id, name, address, contact_number)
 VALUES 
@@ -9,3 +13,4 @@ VALUES
 (101, 'Honda', 'City ZX', 1500000, 2023, 1),
 (102, 'Hyundai', 'Creta SX', 1800000, 2024, 1),
 (103, 'Maruti', 'Baleno Alpha', 950000, 2024, 2);
+
