@@ -1,20 +1,26 @@
 server:
   port: 9199
+
+# Optional logging
 # logging:
 #   level:
 #     liquibase: DEBUG
-invoice.storage.path=invoices/
+
+invoice:
+  storage:
+    path: C:/Java_coder_workspace/InvicePdfApplication/invoices/
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/vivekdb
+    url: jdbc:postgresql://localhost:5432/vivek
     username: postgres
-    password: Postgress
+    password: Vivek
     driver-class-name: org.postgresql.Driver
-    
+
   web:
     resources:
-      static-locations: file:invoices/
+      # ✅ This lets you serve files directly from "invoices" via http://localhost:9199/invoices/
+      static-locations: file:C:/Java_coder_workspace/InvicePdfApplication/invoices/
 
   jpa:
     hibernate:

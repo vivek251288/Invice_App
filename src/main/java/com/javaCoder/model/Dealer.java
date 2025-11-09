@@ -17,6 +17,9 @@ public class Dealer {
 	    private String name;
 	    private String address;
 	    private String contactNumber;
-}
+	    
+	    
+	    
+	    }
 
 
