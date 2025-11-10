@@ -8,6 +8,7 @@ INSERT INTO dealer (id, name, address, contact_number)
 VALUES 
 (1, 'AutoNation Motors', 'Sector 62, Noida, UP', '9876543210'),
 (2, 'SpeedWheels Pvt Ltd', 'MG Road, Bengaluru, KA', '9812345678');
+
 INSERT INTO vehicle (id, make, model, price, year, dealer_id)
 VALUES 
 (101, 'Honda', 'City ZX', 1500000, 2023, 1),

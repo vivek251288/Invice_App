@@ -1,0 +1,5 @@
+-- INSERT INTO dealer (name, address, contact_number) VALUES ('Dealer One', '123 Main St', '123-456-7890');
+-- INSERT INTO dealer (name, address, contact_number) VALUES ('Dealer Two', '456 Elm St', '234-567-8901');
+-- INSERT INTO vehicle (make, model, price, dealer_id) VALUES ('Toyota', 'Camry', 25000.0, 1);
+-- INSERT INTO vehicle (make, model, price, dealer_id) VALUES ('Honda', 'Accord', 26000.0, 1);
+-- INSERT INTO vehicle (make, model, price, dealer_id) VALUES ('Ford', 'Mustang', 35000.0, 2);
