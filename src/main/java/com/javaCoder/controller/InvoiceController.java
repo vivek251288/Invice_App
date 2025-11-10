@@ -125,4 +125,12 @@ public class InvoiceController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName())
                 .body(resource);
     }
+      @GetMapping("/")
+    public ResponseEntity<Map<String, String>> home() {
+        Map<String, String> info = new HashMap<>();
+        info.put("message", "✅ Invoice PDF Service is running successfully!");
+        info.put("generate_api", "/api/invoice/generate (POST)");
+        info.put("download_api", "/api/invoice/download?invoiceNumber=XXXX (GET)");
+        return ResponseEntity.ok(info);
+    }
 }
