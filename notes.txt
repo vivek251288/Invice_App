@@ -1,8 +1,8 @@
 http://localhost:9199/api/invoice/generate?dealerId=1&vehicleId=101&customerName=John%20Doe
 http://localhost:9199/api/invoice/download?invoiceId=INV-1762686667771
-http://127.0.0.1:9199/api/invoice/findByInvoiceId?invoiceNumber=INV-1762686667771
+http://127.0.0.1:9199/api/invoice/findByInvoiceNumber?invoiceNumber=INV-1762686667771
 http://127.0.0.1:9199/api/invoice/findByInvoiceAndVehicleId?dealerId=1&vehicleId=101&invoiceNumber=INV-1762686667771
-
+http://invice-app.onrender.com/api/invoice/findByInvoiceNumber?invoiceNumber=INV-1762793484170.pdf
 
 INSERT INTO dealer (id, name, address, contact_number)
 VALUES 
