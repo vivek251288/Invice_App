@@ -20,18 +20,11 @@ RUN mvn clean package -DskipTests
 
 # Stage 2: Run the app with JDK - Run Spring Boot JAR
 # FROM eclipse-temurin:17-jdk
-# FROM eclipse-temurin:17-jre
-# WORKDIR /app
-# COPY --from=builder /app/target/*.jar app.jar
-
-# # Expose port 8080
-# EXPOSE 8080
-# ENTRYPOINT ["java", "-jar", "app.jar"]
-#############################################################
-
-# Stage 2: Run the JAR
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=builder /app/target/*.jar app.jar
+
+# Expose port 8080
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
+#############################################################
