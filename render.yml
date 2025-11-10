@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: invoice-app-0.0.1-SNAPSHOT
+    name: invoice-app
     env: docker
     dockerfilePath: ./Dockerfile
     buildCommand: "./mvnw clean package"
