@@ -33,7 +33,7 @@ public class DataInitializer {
                     .contactNumber("9988776655")
                     .build());
 
-            System.out.println("✅ Sample dealer data inserted successfully!");
+            System.out.println("Dealer data inserted");
         }
     }
 }

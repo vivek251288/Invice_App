@@ -41,7 +41,7 @@ public class VahicleDataInitializer {
                     3L // assuming dealerId = 3
             ));
 
-            System.out.println("✅ Sample vehicle data inserted successfully!");
+            System.out.println("Vehicle data inserted");
         }
     }
 }
