@@ -1,10 +1,12 @@
 server:
-  port: 8080
+  port: ${PORT:8080}   # Use Render's assigned port or 8080 locally
+  error:
+    whitelabel:
+      enabled: false   # Disable default white-label error page
 
-# logging:
-#   level:
-#     liquibase: DEBUG
-invoice.storage.path=invoices/
+invoice:
+  storage:
+    path: invoices/    # Folder for storing generated PDF invoices
 
 spring:
   datasource:
@@ -12,21 +14,24 @@ spring:
     username: postgres
     password: Vivek
     driver-class-name: org.postgresql.Driver
-    
-  web:
-    resources:
-      static-locations: file:invoices/
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-    open-in-view: false  
+    open-in-view: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        
-server:
-  error:
-    whitelabel:
-      enabled: false
+        format_sql: true
+
+  web:
+    resources:
+      static-locations: file:invoices/
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
