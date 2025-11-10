@@ -14,7 +14,7 @@
     <groupId>com.javaCoder</groupId>
     <artifactId>InvicePdfApplication</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>InvicePdfApplication</name>
    <!-- <description>Vehicle Invoice Generator with PDF & QR Code</description> -->
     <description>Vehicle Invoice Generator with PDF &amp; QR Code</description>
