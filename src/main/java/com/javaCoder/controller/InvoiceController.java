@@ -76,32 +76,6 @@ public class InvoiceController {
         return response;
     }
 
-//    @GetMapping("/download")
-//    public String downloadInvoice(@RequestParam String invoiceNumber) {
-//        return new String("Invoice Downloaded");
-//    }
-//    
-//    @GetMapping("/download")
-//    public ResponseEntity<Resource> downloadInvoice(@RequestParam String invoiceNumber) throws IOException {
-//        // Define folder where PDF is stored
-//        File file = new File("invoices/" + invoiceNumber + ".pdf");
-//
-//        // Log path for debugging
-//        System.out.println("Looking for file: " + file.getAbsolutePath());
-//
-//        if (!file.exists()) {
-//            return ResponseEntity.status(404)
-//                    .contentType(MediaType.TEXT_PLAIN)
-//                    .body(null);
-//        }
-//
-//        InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
-//
-//        return ResponseEntity.ok()
-//                .contentType(MediaType.APPLICATION_PDF)
-//                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + file.getName())
-//                .body(resource);
-//    }
     @GetMapping("/download")
     public ResponseEntity<Resource> downloadInvoice(@RequestParam String invoiceNumber) throws IOException {
         // Correctly resolve path
