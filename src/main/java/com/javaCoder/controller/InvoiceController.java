@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.javaCoder.model.Invoice;
 import com.javaCoder.service.InvoiceService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api/invoice")
@@ -34,10 +32,14 @@ public class InvoiceController {
         String pdf = invoiceService.generateInvoice(dealerId, vehicleId, customerName);
 
         ResponseEntity<String> response = ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=invoice.pdf")
-                .contentType(MediaType.TEXT_PLAIN)
-                .body(pdf);
-
+                .header(HttpHeaders.CONTENT_TYPE, "Application/JSON")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body("""
+                                    {
+                                        "status": "success",
+                                        "pdfLink": "%s"
+                                    }
+                                    """.formatted(pdf));
         return response;
     }
 
@@ -50,7 +52,7 @@ public class InvoiceController {
         return invoiceService.findByInvoiceNumber(invoiceNumber);
     }
 
-    @GetMapping("/findByInvoiceIdAndVehicleId")
+    @GetMapping("/findByDealerIdAndVehicleId")
     public ResponseEntity<?> downloadInvoiceByDealerId(@RequestParam Long dealerId, @RequestParam Long vehicleId) {
         return invoiceService.findByDealerIdAndVehicleId(dealerId, vehicleId);
     }
