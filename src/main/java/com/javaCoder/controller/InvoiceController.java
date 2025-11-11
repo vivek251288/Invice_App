@@ -51,13 +51,22 @@ public class InvoiceController {
 //
 //        String pdf = invoiceService.generateInvoice(dealerId, vehicleId, customerName);
     
-    @PostMapping("/generate")
-    public ResponseEntity<String> generateInvoice(@RequestBody InvoiceRequest request) {
-        String pdf = invoiceService.generateInvoice(
-            request.getDealerId(),
-            request.getVehicleId(),
-            request.getCustomerName()
-        );
+    // @PostMapping("/generate")
+    // public ResponseEntity<String> generateInvoice(@RequestBody InvoiceRequest request) {
+    //     String pdf = invoiceService.generateInvoice(
+    //         request.getDealerId(),
+    //         request.getVehicleId(),
+    //         request.getCustomerName()
+    //     );
+    @PostMapping("/generate/{dealerId}/{vehicleId}/{customerName}")
+    public ResponseEntity<String> generateInvoice(
+            @PathVariable Long dealerId,
+            @PathVariable Long vehicleId,
+            @PathVariable String customerName) {
+
+        String pdf = invoiceService.generateInvoice(dealerId, vehicleId, customerName);
+
+
 
         ResponseEntity<String> response = ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=invoice.pdf")
