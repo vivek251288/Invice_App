@@ -1,37 +1,29 @@
 server:
-  port: ${PORT:8080}   # Use Render's assigned port or 8080 locally
-  error:
-    whitelabel:
-      enabled: false   # Disable default white-label error page
+  port: 8080
 
-invoice:
+invoice: 
   storage:
-    path: invoices/    # Folder for storing generated PDF invoices
+    path: invoices/
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/vivek
-    username: postgres
-    password: Vivek
-    driver-class-name: org.postgresql.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    open-in-view: false
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-
+  # ;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE;WEB_ALLOW_OTHERS=TRUE
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      enabled: true
+      path: /h2-console-app
   web:
     resources:
       static-locations: file:invoices/
 
-logging:
-  level:
-    root: INFO
-    org.springframework.web: INFO
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
